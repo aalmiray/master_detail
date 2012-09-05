@@ -4,7 +4,7 @@ class MasterController {
     def model
     def view
 
-    def mvcGroupInit(Map args) {
+    void mvcGroupInit(Map args) {
         def updateMasterPanel = { cls ->
            cls.delegate = view.masterPanel
            view.masterPanel.with {
@@ -14,6 +14,7 @@ class MasterController {
            }
         }
         model.details.addPropertyChangeListener({ e ->
+            if (!(e instanceof groovy.util.ObservableMap.PropertyEvent)) return
             switch(e.type) {
                 case ObservableMap.PropertyEvent.ADDED:
                     updateMasterPanel { add(e.newValue) }

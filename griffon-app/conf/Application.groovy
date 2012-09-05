@@ -11,15 +11,15 @@ application {
 mvcGroups {
     // MVC Group for "detail"
     'detail' {
-        model = 'DetailModel'
-        view = 'DetailView'
+        model      = 'DetailModel'
+        view       = 'DetailView'
         controller = 'DetailController'
     }
 
     // MVC Group for "master"
     'master' {
-        model = 'MasterModel'
+        model      = 'MasterModel'
         controller = 'MasterController'
-        view = 'MasterView'
+        view       = 'MasterView'
     }
 }
